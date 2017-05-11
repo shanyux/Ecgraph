@@ -3,7 +3,7 @@
 ## What is it?
 This is a distributed graph processing engine based on mpi, and it needs further modification so do not clone it although it can run. And Makefile will be added in the future
 
-##Dependency
+## Dependency
 (This program depends on below, and it works well in other versions), and also you should make sure that the Makefile locates the right path, in order to share the same libs between the mpi cluster, you can put the libs in a nfs path.
 * mpich 3.2
 * boost 1.62.0 (for its json parser), it may depend on some other libs.
