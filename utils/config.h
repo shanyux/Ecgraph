@@ -71,7 +71,6 @@ namespace ecgraph {
 
 			try {
 				for (auto item : pt.get_child("graph_info")) {
-					//？？？？？？？data，本来就是string？干嘛转换
 					m_conf[item.first] = item.second.data();//map  生成一个const char*指针，指向字符数组（不必以空字符结束）。
 				}
 			}

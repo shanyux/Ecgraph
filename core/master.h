@@ -337,13 +337,13 @@ void master::send_partition_info() {
 	read_json(ss, pt);		//读取json
 
 	for (int i = 0; i < COMPUTE_SIZE; i++) {
-		ptree send_pt = pt;//拷贝？？？？？？？？？？？？？？？？？？？？？？？？？？？？
+		ptree send_pt = pt;//拷贝构造函数，send_pt和pt一样的
 		try {
 			std::pair<ecgraph::vertex_t, ecgraph::vertex_t> vertices_range
 				= m_ring->get_vertices_on_node(index_to_machine[i]);//获取一个工作节点的图结点的开始结点，结束结点
 
 			//分区名字，如sw_1表示rank值为1的计算节点的所拥有的图分区
-			send_pt.put("graph_info.partition_id", std::to_string(index_to_machine[i]));//put是修改值
+			send_pt.put("graph_info.partition_id", std::to_string(index_to_machine[i]));//在这里put是修改值
 			send_pt.put("graph_info.name", pt.get<std::string>("graph_info.name")
 				+ "_"
 				+ std::to_string(index_to_machine[i]));

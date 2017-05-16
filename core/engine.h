@@ -235,7 +235,7 @@ public:
 		}
 		else {
 			m_partition_vertices_num = m_vertices_num - m_partition_start_vid 
-										+ m_partition_end_vid + 1;//？？？？？？？？？？？？？？
+										+ m_partition_end_vid + 1;//
 		}
 		//=====================================================
 
@@ -549,7 +549,7 @@ public:
 	virtual void output() = 0;
 	virtual void clear() = 0;
 	virtual void scatter_wrapper() {
-		scatter();//纯虚函数怎么使用？？？？？？？？？？？？？？？？？？？？？？？？
+		scatter();//纯虚函数是被继承的类的实现
 		push_all_buffered_update();
 	}
 	virtual void gather_wrapper() {

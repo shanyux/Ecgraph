@@ -183,10 +183,10 @@ namespace ecgraph{
 			vertex_t ring_id, node_id;
 			for (auto item : node_to_ring.get_child("ring_to_node")) {
 				type_convert.clear();
-				type_convert << item.first;
+				type_convert << item.first;//key是string
 				type_convert >> ring_id;//简单类型转换
 
-				type_convert.clear();
+				type_convert.clear();//value的类型是tree需要转换string
 				type_convert << item.second.data();//.c_str()   是生成以‘\0’结束的字符串；data()    生成的字符串没有‘\0’；
 				type_convert >> node_id;
 

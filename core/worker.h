@@ -989,7 +989,7 @@ inline ecgraph::vertex_t worker<update_type>::get_graph_mid()//关键字inline �
 	
 	while (!graphdata_file.eof()) {
 
-		read_num = graphdata_file.read((char *)edge_buf + yu,//？？？？？？yu？
+		read_num = graphdata_file.read((char *)edge_buf + yu,//
 			READ_GRAPH_DATA_ONCE*sizeof(ecgraph::edge_t) - yu).gcount();
 		read_num += yu;
 		yu = read_num % sizeof(ecgraph::edge_t);

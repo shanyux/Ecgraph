@@ -240,13 +240,12 @@ namespace ecgraph {
 			elem_type buf[size];//传数据的小车
 			int total;
 			int yu = 0;////
-			//？？？？？？？？？？？？？？？？？？？？？不会泄露么，gcount()，来取得实际读取的字符数
-			//yu肯定是0啊
+			//small bug 不会泄露么，gcount()，来取得实际读取的字符数
 			while((total = infile.read((char *)buf + yu, m_elem_size * size).gcount())){////获取实际读取的一个字节个数////
 				//std::cout<<"total "<<total<<std::endl;
 				//std::cout<<"write "<<buf<<std::endl;
 				total += yu;
-				yu = total % m_elem_size;////以一条边为单位的数据量使用，不够一条边的就剩下了
+				yu = total % m_elem_size;////以一条边为单位的数据量使用，不够一条边的就剩下了，剩下的字节
 				total = total / m_elem_size;
 				int temp = total;
 				
@@ -266,7 +265,7 @@ namespace ecgraph {
 					//LOG_TRIVIAL(info)<<"file "<<filename << " has being written into the buffer";
 					//boost::mutex::scoped_lock lock(buffer_mutex);
                     //scope lock
-					set_over();
+					set_over();//无数据往里写
                     //buffer_mutex.unlock();
 				}
 				
