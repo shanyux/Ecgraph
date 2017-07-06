@@ -148,7 +148,7 @@ protected:
 	//下面数组中间结果
 	//std::vector<ecgraph::weight_t> result;
 	update_type get_update_type;
-	std::vector<decltype(get_update_type.update_value)> result;//decltype返回值的类型是表达式参数的类型哪来的update_value？？？？？
+	std::vector<decltype(get_update_type.update_value)> result;//decltype返回值的类型是表达式参数的类型哪来的update_value
 	//度
 	std::vector<int> degree;
 public:
