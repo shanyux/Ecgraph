@@ -696,7 +696,7 @@ inline void worker<update_type>::binay_partition_myself()
 	new_worker_partition_name.erase(pos);//不指定个数则删除到结尾
 	send_pt.put("graph_info.name", new_worker_partition_name
 		+ "_" + std::to_string(new_worker));
-	send_pt.put("graph_info.partition_end_vid",	std::to_string(mid));//？？？？？？？？？？？？？？？？？？？？
+	send_pt.put("graph_info.partition_end_vid",	std::to_string(mid));//
 	send_pt.put("graph_info.partition_start_vid", std::to_string(start));
 	send_pt.put("graph_info.partition_mid_vid",	std::to_string(-1));
 	//发送
